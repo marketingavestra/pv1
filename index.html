@@ -1802,20 +1802,21 @@
 
   <!-- Meta Pixel Code -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '228339236250935');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2155347901908121');
     fbq('track', 'PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2155347901908121&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <!-- TikTok Pixel Code Start -->
   <script>
@@ -1875,7 +1876,7 @@
         <span class="sticky-mobile"><strong>Oferta de lançamento</strong><br><span class="sticky-price-old">R$297</span>
           <span class="sticky-price-arrow">→</span> <span class="sticky-price-new">R$37,00</span></span>
       </div>
-      <a href="javascript:void(0)" class="sticky-bar-cta" data-cta="cta-01">Quero meu time de IAs →</a>
+      <a href="https://hub.la/r/biosite" class="sticky-bar-cta" data-cta="cta-01">Quero meu time de IAs →</a>
     </div>
   </div>
 
@@ -1908,7 +1909,7 @@
             empresa 24/7/365, com consistência, aprendizado, sem folga, sem férias, sem vínculo trabalhista</p>
         </div>
         <div class="hero-cta-group">
-          <a href="javascript:void(0)" class="btn-primary" data-cta="cta-02">Quero montar meu time de IAs → R$37,00</a>
+          <a href="https://hub.la/r/biosite" class="btn-primary" data-cta="cta-02">Quero montar meu time de IAs → R$37,00</a>
           <span class="btn-sub">Acesso imediato. Instrução direta sem enrolação. Garantia de 7 dias.</span>
         </div>
       </div>
@@ -2126,7 +2127,7 @@
   <section class="mid-cta">
     <h2>Seu time de IAs está a algumas horas de distância.</h2>
     <p>Pare de executar. Comece a pensar. Deixa a IA cuidar do resto.</p>
-    <a href="javascript:void(0)" class="btn-white" data-cta="cta-04">Quero meu time de IAs →</a>
+    <a href="https://hub.la/r/biosite" class="btn-white" data-cta="cta-04">Quero meu time de IAs →</a>
   </section>
 
   <!-- ========== 10. CURRICULO ========== -->
@@ -2251,7 +2252,7 @@
     <h2 class="section-title reveal">Pare de fazer o que uma IA faz melhor que você.</h2>
     <p class="sub reveal" style="margin-bottom:3rem;">Seu tempo vale mais do que operação repetitiva. Monta o time.
       Delega. Foca no que move o ponteiro.</p>
-    <a href="https://lastlink.com/p/C07FE2AF4/checkout-payment/" target="_blank" rel="noopener"
+    <a href="https://hub.la/r/biosite" target="_blank" rel="noopener"
       class="btn-primary reveal" data-cta="cta-final-bottom">Quero meu time de IAs por R$37,00 →</a>
   </section>
 
@@ -2377,15 +2378,7 @@
       });
 
 
-      // ===== SMOOTH SCROLL FOR CTAs =====
-      document.querySelectorAll('a[data-cta]').forEach(function (link) {
-        if (link.getAttribute('data-cta') === 'cta-03') return;
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          var target = document.querySelector('#cta-final');
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
+
 
     })();
   </script>
@@ -2482,11 +2475,9 @@
         var ctaId = ctaEl.getAttribute('data-cta');
         sendEvent('cta-offer-pressed', { cta: ctaId, page: PAGE_NAME });
 
-        // cta-03 is the main offer button → also fire checkout-opened
-        if (ctaId === 'cta-03') {
-          sendEvent('checkout-opened', { page: PAGE_NAME });
-
-          // Append UTMs to checkout URL
+        // Append UTMs to checkout URL if it's a hub.la link
+        if (ctaEl.href.includes('hub.la')) {
+          sendEvent('checkout-opened', { cta: ctaId, page: PAGE_NAME });
           var checkoutUrl = new URL(ctaEl.href);
           if (utmSource) checkoutUrl.searchParams.set('utm_source', utmSource);
           if (utmMedium) checkoutUrl.searchParams.set('utm_medium', utmMedium);
