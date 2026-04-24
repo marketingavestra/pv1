@@ -1,0 +1,67 @@
+:root {
+  /* Avestra Brand Colors */
+  --bg: #0A0A0F;
+  --surface: #12121A;
+  --elevated: #1A1A28;
+  
+  --accent: #6C5CE7;
+  --accent-light: #8B7FF0;
+  --accent-dim: rgba(108, 92, 231, 0.15);
+  
+  --mint: #00D4AA;
+  --orange: #FF6B35;
+  
+  --fg: #E8E8F0;
+  --fg-secondary: #8888A0;
+  --fg-faint: #5A5A72;
+  
+  --border: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(108, 92, 231, 0.35);
+  
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--elevated);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dim);
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}

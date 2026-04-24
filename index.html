@@ -1,0 +1,2508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avestra — Implementação de Times de Agentes IA</title>
+  <meta name="description"
+    content="Aprenda a construir seu próprio time de agentes de IA e delegar 80% do seu operacional. Inclui bônus de Segundo Cérebro e IA Treinada.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="Jonas Guvito | Avestra">
+  <meta name="theme-color" content="#6C5CE7">
+  <link rel="canonical" href="https://avestra.com.br/diagnostico">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://avestra.com.br/diagnostico">
+  <meta property="og:site_name" content="Avestra — Diagnóstico Técnico">
+  <meta property="og:title" content="Diagnóstico Técnico de Tráfego — Saiba o que o Meta realmente vê">
+  <meta property="og:description"
+    content="Descubra exatamente onde o rastreamento do seu Meta Ads está quebrando e quanto isso está te custando por mês. Relatório técnico por Jonas Guvito.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Avestra — Diagnóstico Técnico de Tráfego">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Avestra — Diagnóstico Técnico de Tráfego">
+  <meta name="twitter:description" content="Descubra onde seu rastreamento quebra.">
+  <meta name="twitter:image" content="images/og-image.png">
+  <meta name="twitter:image:alt" content="Avestra — Diagnóstico Técnico de Tráfego">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- Preconnect for Google Fonts (loaded via base.css @import) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+  <!-- JSON-LD Structured Data: Course -->
+  <script type="text/javascript" async="" src="js/events.js"></script>
+  <script async="" src="js/fbevents.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Diagnóstico Técnico de Tráfego",
+  "description": "Descubra exatamente onde o rastreamento do seu Meta Ads está quebrando e quanto isso está te custando por mês.",
+  "url": "https://avestra.com.br/diagnostico",
+  "brand": {
+    "@type": "Brand",
+    "name": "Avestra"
+  }
+}
+</script>
+
+  <!-- JSON-LD Structured Data: FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Esse curso é pra mim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É pra você se passa horas no computador fazendo tarefas operacionais, quer uma IA que trabalhe por você (não só responda perguntas), quer mais tempo pra pensar estrategicamente, ou quer uma IA que proativamente traga insights e ideias sobre o seu trabalho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pra quem NÃO é esse curso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não é pra quem quer construir agentes de IA como produto, busca algo teórico sem prática, ou espera algo pronto sem se dedicar ~3h no curso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso saber programar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O curso foi feito para pessoas sem nenhum conhecimento técnico."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que eu preciso pra fazer o curso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Um computador e um celular. O computador é essencial na parte de configuração do OpenClaw — é onde você vai subir a infraestrutura e personalizar o agente. Já o celular é por onde você vai interagir com o agente no dia a dia, pelo WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é o OpenClaw?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uma ferramenta gratuita e open-source que cria agentes de IA com memória, autonomia e acesso pelo WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa rodar um agente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A partir de R$39/mês de infraestrutura + custo dos modelos de IA. O curso inclui uma planilha com todos os valores detalhados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Serve pra uso pessoal ou só pra negócio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os dois. O agente ajuda tanto na rotina pessoal quanto profissional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E se eu travar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O curso inclui checklists, templates e código de exemplo pra você não travar em nenhuma etapa. Além disso, você terá acesso a um grupo do Telegram pra tirar dúvidas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva pra ter o agente rodando?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No primeiro módulo, em algumas horas, você já tem o agente rodando. Pra customizar toda a estrutura seguindo um ritmo tranquilo: 13 dias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso de alguma ferramenta paga além da infraestrutura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O OpenClaw é gratuito. Os únicos custos são a infraestrutura e os modelos de IA, tudo detalhado na planilha inclusa."
+      }
+    }
+  ]
+}
+</script>
+
+  <link rel="stylesheet" href="css/base.css">
+  <style>
+    /* ===== OPENCLAW WEBSITE — PAGE-SPECIFIC STYLES ===== */
+    .split-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .split-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .split-block h3 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .roi-calculator input:focus {
+      outline: 2px solid var(--accent);
+      border-color: transparent;
+    }
+
+    .module-num {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .transform-card {
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid var(--gray-200);
+      text-align: left;
+    }
+
+    .transform-card-header {
+      font-weight: 800;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .transform-card-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .transform-card-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--gray-600);
+    }
+
+    .transform-card-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+
+    /* --- Brand color overrides (Blue & Neutral theme) --- */
+    .hero {
+      padding: 2.5rem 2rem 5rem;
+    }
+
+    .hero::before {
+      display: none;
+    }
+
+    .hero-badge {
+      background: rgba(144, 192, 224, 0.1);
+      border: 1px solid rgba(144, 192, 224, 0.25);
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      max-width: 800px;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--white);
+    }
+
+    .hero-cta-group {
+      margin-bottom: 3rem;
+    }
+
+    .section-subtitle {
+      max-width: 750px;
+    }
+
+    .faq-item:hover {
+      border-color: var(--accent);
+    }
+
+    .faq-question .arrow {
+      color: var(--accent);
+    }
+
+    .final-cta::before {
+      display: none;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(144, 192, 224, 0.1);
+    }
+
+    .timeline::before {
+      background: linear-gradient(180deg, var(--accent), var(--brand));
+    }
+
+    .timeline-item:hover .timeline-content {
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(144, 192, 224, 0.1);
+    }
+
+    /* --- Logo (Avestra-specific) --- */
+    .logo {
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: var(--text-card);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-badge {
+      font-size: var(--text-micro);
+      font-weight: 700;
+      background: rgba(0, 212, 170, 0.15);
+      color: #00D4AA;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ===== HERO MASCOT ===== */
+    .hero-mascot {
+      display: block;
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 1rem;
+      animation: mascotFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes mascotFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* ===== VSL CONTAINER ===== */
+    .vsl-container {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      position: relative;
+      z-index: 2;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .vsl-horizontal {
+      display: block;
+    }
+
+    .vsl-vertical {
+      display: none;
+    }
+
+    /* ===== NARRATIVE SECTIONS ===== */
+    .narrative-content p {
+      font-size: var(--text-card);
+      color: var(--gray-700);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+      max-width: 750px;
+    }
+
+    .narrative-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .narrative-content strong {
+      color: var(--gray-900);
+      font-weight: 700;
+    }
+
+    .narrative-content em {
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* ===== OPENCLAW PILLARS ===== */
+    .openclaw-intro {
+      font-size: var(--text-card);
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+    }
+
+    /* ===== SOLUTION SECTION ===== */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .solution-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.45s var(--easing);
+    }
+
+    .solution-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px rgba(254, 80, 0, 0.1);
+      transform: translateY(-6px);
+    }
+
+    .solution-emojis {
+      font-size: 1.8rem;
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .solution-card h3 {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 0 0 0.75rem;
+    }
+
+    .solution-card p {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .solution-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+
+    .solution-list li::before {
+      content: "\2022";
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    .solution-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .solution-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-top: auto;
+      align-self: center;
+      white-space: nowrap;
+    }
+
+    .solution-pill--ai {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #059669;
+    }
+
+    .solution-pill--you {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      color: var(--gray-600);
+    }
+
+    /* ===== STORY SECTION ===== */
+    .story-author {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background: var(--gray-50);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gray-200);
+    }
+
+    .story-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--accent);
+    }
+
+    .story-author-info h3 {
+      font-size: var(--text-card);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.2rem;
+    }
+
+    .story-author-info p {
+      font-size: var(--text-body);
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    .story-block {
+      margin-bottom: 2rem;
+    }
+
+    .story-block h4 {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.8rem;
+    }
+
+    .story-block p {
+      font-size: var(--text-base);
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    .story-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .story-list li {
+      font-size: 0.9375rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .story-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .story-footnote {
+      font-size: var(--text-body);
+      color: var(--gray-600);
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    /* ===== METRICS GRID ===== */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .metric-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .metric-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .metric-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .metric-label {
+      font-size: var(--text-meta);
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+
+    /* ===== QUOTE ===== */
+    .quote-block {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, rgba(254, 80, 0, 0.04), rgba(254, 80, 0, 0.02));
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.8rem 2rem;
+    }
+
+    .quote-block p {
+      font-size: var(--text-card);
+      font-weight: 500;
+      color: var(--gray-900);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ===== TRANSFORM CARDS (before/after) ===== */
+    .transform-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .transform-card {
+      border-radius: var(--radius-md);
+      padding: 2rem 1.8rem;
+    }
+
+    .transform-card--before {
+      background: var(--gray-50);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .transform-card--after {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(16, 185, 129, 0.02));
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .transform-card-header {
+      font-size: var(--text-base);
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid var(--gray-100);
+    }
+
+    .transform-card--before .transform-card-header {
+      color: #EF4444;
+      border-bottom-color: rgba(239, 68, 68, 0.2);
+    }
+
+    .transform-card--after .transform-card-header {
+      color: #10B981;
+      border-bottom-color: rgba(16, 185, 129, 0.25);
+    }
+
+    .transform-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .transform-card-list li {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .transform-card--before .transform-card-list li {
+      color: var(--gray-500);
+    }
+
+    .transform-card--before .transform-card-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gray-400);
+    }
+
+    .transform-card--after .transform-card-list li {
+      color: var(--gray-700);
+    }
+
+    .transform-card--after .transform-card-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #10B981;
+      font-weight: 700;
+    }
+
+    /* ===== TIMELINE / CURRICULUM — page-specific extras ===== */
+    .timeline-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-content {
+      padding: 1.2rem 1.5rem;
+    }
+
+    .timeline-content h4 {
+      font-size: var(--text-base);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-content p {
+      font-size: var(--text-body);
+    }
+
+    .module-badge {
+      display: inline-block;
+      font-size: var(--text-micro);
+      font-weight: 700;
+      background: rgba(254, 80, 0, 0.1);
+      color: var(--accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .curriculum-duration {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--gray-600);
+    }
+
+    .curriculum-duration strong {
+      color: var(--accent);
+    }
+
+    /* ===== MATERIAL GRID ===== */
+    .material-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .material-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      transition: all 0.45s var(--easing);
+    }
+
+    .material-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 30px rgba(254, 80, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .material-emoji {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .material-card h3 {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.4rem;
+    }
+
+    .material-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    .usecase-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      text-align: left;
+    }
+
+    .usecase-list li::before {
+      content: "\2022";
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    .usecase-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* ===== PAGE-SPECIFIC ANIMATIONS ===== */
+    @keyframes pulseLot {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(254, 80, 0, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(254, 80, 0, 0);
+      }
+    }
+
+    /* ===== FINAL CTA — page-specific sub text ===== */
+    .final-cta .sub {
+      font-size: var(--text-card);
+    }
+
+    /* ===== HERO ENTRANCE — VSL container ===== */
+    .vsl-container {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroEntrance 1s var(--easing) forwards;
+      animation-delay: 1s;
+    }
+
+    /* ===== OFFER CARD (unified pricing + stack) ===== */
+    .offer-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(254, 80, 0, 0.2);
+      border-radius: var(--radius-xl);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+      padding: 2.8rem 2rem 1.8rem;
+      box-shadow: 0 0 60px rgba(254, 80, 0, 0.12);
+    }
+
+    /* Floating price badge — centered on top edge */
+    .price-badge {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, var(--accent) 0%, #ff6a1a 100%);
+      color: var(--white);
+      font-size: var(--text-small);
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 0.5rem 1.4rem;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(254, 80, 0, 0.3);
+    }
+
+    /* Price area inside the card */
+    .offer-price {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .offer-price .pricing-original {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: line-through;
+      margin-bottom: 0.2rem;
+    }
+
+    .offer-price .pricing-current {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .offer-price .pricing-current .currency {
+      font-size: 1.8rem;
+      vertical-align: super;
+      margin-right: 0.15rem;
+    }
+
+    .offer-price .pricing-lifetime {
+      font-size: var(--text-card);
+      font-weight: 700;
+      color: #10B981;
+      margin-bottom: 0.3rem;
+    }
+
+    /* Stack offer — list inside the card */
+    .stack-offer {
+      text-align: left;
+    }
+
+    .stack-offer-title {
+      font-size: var(--text-small);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .stack-offer-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .stack-offer-item:last-child {
+      border-bottom: none;
+    }
+
+    .stack-offer-check {
+      flex-shrink: 0;
+      color: #10B981;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .stack-offer-item span {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+    }
+
+    /* --- Guarantee badge --- */
+    .guarantee-badge {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-md);
+    }
+
+    .guarantee-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      color: #10B981;
+    }
+
+    .guarantee-badge strong {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--white);
+      margin-bottom: 0.15rem;
+    }
+
+    .guarantee-badge span {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .final-cta .btn-sub {
+      display: block;
+      margin-top: 1rem;
+      font-size: var(--text-list);
+      color: var(--gray-400);
+    }
+
+    /* ===== TESTIMONIALS CAROUSEL ===== */
+    .testimonials-carousel-wrap {
+      position: relative;
+      margin-top: 2.5rem;
+      width: 100%;
+      max-width: 700px;
+      overflow: hidden;
+      transition: height 0.4s ease;
+    }
+
+    .testimonials-carousel {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    .testimonial-slide {
+      flex: 0 0 100%;
+      width: 0;
+    }
+
+    .testimonial-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-sm);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      border: none;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--gray-900);
+    }
+
+    .carousel-btn--prev {
+      left: 6px;
+    }
+
+    .carousel-btn--next {
+      right: 6px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gray-300);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+
+    /* ===== SOCIAL PROOF (YouTube Comments) ===== */
+    .social-proof {
+      background: var(--gray-50);
+      padding: 6rem 2rem;
+    }
+
+    .social-proof-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .social-proof-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .social-proof-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      background: var(--white);
+      width: 100%;
+      transition: all 0.45s var(--easing);
+    }
+
+    .social-proof-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      border-color: var(--accent);
+    }
+
+    .social-proof-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .social-proof-source {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: var(--text-list);
+      color: var(--gray-400);
+    }
+
+    .social-proof-source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .social-proof-source a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== STICKY OFFER BAR ===== */
+    .sticky-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 150;
+      background: rgba(10, 14, 42, 0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(254, 80, 0, 0.15);
+      padding: 0 2rem;
+      transform: translateY(-100%);
+      transition: transform 0.4s var(--easing);
+    }
+
+    .sticky-bar.visible {
+      transform: translateY(0);
+    }
+
+    .sticky-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 1.5rem;
+    }
+
+    .sticky-bar-info {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: var(--text-body);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .sticky-bar-info .sticky-label {
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: var(--text-list);
+    }
+
+    .sticky-bar-info .sticky-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .sticky-bar-info .sticky-highlight {
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .sticky-bar-cta {
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.7rem 1.8rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: var(--text-body);
+      white-space: nowrap;
+      transition: all 0.3s;
+    }
+
+    .sticky-bar-cta:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(254, 80, 0, 0.4);
+    }
+
+    .sticky-bar-info .sticky-price-old {
+      text-decoration: line-through;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.9375rem;
+    }
+
+    .sticky-bar-info .sticky-price-arrow {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.8125rem;
+      margin: 0 0.15rem;
+    }
+
+    .sticky-bar-info .sticky-price-new {
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .sticky-bar-info .sticky-mobile {
+      display: none;
+    }
+
+    /* ===== RESPONSIVE: TABLET (768px) ===== */
+    @media (max-width: 768px) {
+
+      /* Layout base */
+      .hero {
+        padding: 3.5rem 1.2rem 3rem;
+      }
+
+      section {
+        padding: 3.5rem 1.2rem;
+      }
+
+      .section-inner {
+        max-width: 100%;
+      }
+
+      /* Hero */
+      .hero-mascot {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 0.8rem;
+      }
+
+      .hero-badge {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 7vw, 2.8rem);
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-sub {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        color: var(--white);
+      }
+
+      .hero-cta-group {
+        margin-bottom: 2rem;
+      }
+
+      .btn-primary {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+      }
+
+      .btn-sub {
+        font-size: 0.9375rem;
+      }
+
+      /* VSL responsive */
+      .vsl-horizontal {
+        display: none;
+      }
+
+      .vsl-vertical {
+        display: block;
+      }
+
+      .vsl-container {
+        max-width: 400px;
+      }
+
+      /* Section titles */
+      .section-tag {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.85rem;
+        letter-spacing: 1.5px;
+      }
+
+      .section-title {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        margin-bottom: 1rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Narrative */
+      .narrative-content p {
+        font-size: 0.9375rem;
+        line-height: 1.75;
+        margin-bottom: 1.2rem;
+      }
+
+      /* Solution cards */
+      .solution-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .solution-card {
+        padding: 1.5rem;
+      }
+
+      .solution-card h3 {
+        font-size: 1rem;
+      }
+
+      .solution-card p {
+        font-size: 0.9375rem;
+      }
+
+      .solution-list {
+        font-size: 0.9375rem;
+      }
+
+      .solution-pill {
+        align-self: flex-start;
+      }
+
+      /* Story */
+      .story-author {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem;
+      }
+
+      .story-avatar {
+        width: 100px;
+        height: 100px;
+      }
+
+      .story-author-info h3 {
+        font-size: 1rem;
+      }
+
+      .story-author-info p {
+        font-size: 0.875rem;
+      }
+
+      .story-block h4 {
+        font-size: 1rem;
+      }
+
+      .story-block p {
+        font-size: 0.9375rem;
+      }
+
+      /* Metrics */
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+      }
+
+      .metric-card {
+        padding: 1.2rem 1rem;
+      }
+
+      .metric-value {
+        font-size: 1.4rem;
+      }
+
+      .metric-label {
+        font-size: 0.875rem;
+      }
+
+      /* Quote */
+      .quote-block {
+        padding: 1.2rem 1.4rem;
+      }
+
+      .quote-block p {
+        font-size: 0.9375rem;
+      }
+
+      /* Transform cards */
+      .transform-cards {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .transform-card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      /* Timeline */
+      .timeline::before {
+        left: 19px;
+      }
+
+      .timeline-dot {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8125rem;
+      }
+
+      .timeline-item {
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .timeline-content {
+        padding: 1rem 1.2rem;
+      }
+
+      .timeline-content h4 {
+        font-size: 1rem;
+      }
+
+      .timeline-content p {
+        font-size: 0.9375rem;
+      }
+
+      .module-badge {
+        font-size: 0.75rem;
+      }
+
+      /* Material / use case cards */
+      .material-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .material-card {
+        padding: 1.4rem;
+      }
+
+      .material-card h3 {
+        font-size: 1rem;
+      }
+
+      .material-card p {
+        font-size: 0.9375rem;
+      }
+
+      .usecase-list {
+        font-size: 0.9375rem;
+      }
+
+      /* Mid CTA */
+      .mid-cta {
+        padding: 3rem 1.2rem;
+      }
+
+      .mid-cta h2 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+      }
+
+      .mid-cta p {
+        font-size: 0.9375rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn-white {
+        padding: 0.85rem 2rem;
+        font-size: 1rem;
+      }
+
+      /* FAQ */
+      .faq-question {
+        padding: 1rem 1.2rem;
+        font-size: 0.9375rem;
+      }
+
+      .faq-question .arrow {
+        font-size: 0.875rem;
+      }
+
+      .faq-answer {
+        font-size: 0.9375rem;
+        padding: 0 1.2rem;
+      }
+
+      .faq-item.open .faq-answer {
+        padding: 0 1.2rem 1rem;
+      }
+
+      /* Offer / Final CTA */
+      .final-cta {
+        padding: 4rem 1.2rem;
+      }
+
+      .final-cta h2 {
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+      }
+
+      .final-cta .sub {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+      }
+
+      .offer-card {
+        max-width: 100%;
+        padding: 2.5rem 1.5rem 1.5rem;
+      }
+
+      .offer-price .pricing-current {
+        font-size: 3.5rem;
+      }
+
+      .offer-price .pricing-current .currency {
+        font-size: 1.4rem;
+      }
+
+      .offer-price .pricing-lifetime {
+        font-size: 1rem;
+      }
+
+      .price-badge {
+        font-size: 0.65rem;
+        padding: 0.45rem 1.2rem;
+      }
+
+      .stack-offer-item span {
+        font-size: 0.875rem;
+      }
+
+      .final-cta .btn-primary {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+      }
+
+      /* Testimonials */
+      .testimonials-carousel-wrap {
+        max-width: 100%;
+      }
+
+      .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+      }
+
+      /* Social proof */
+      .social-proof-grid {
+        max-width: 100%;
+      }
+
+      .social-proof {
+        padding: 3.5rem 1.2rem;
+      }
+
+      /* Sticky bar */
+      .sticky-bar {
+        padding: 0 1.2rem;
+      }
+
+      .sticky-bar-inner {
+        height: auto;
+        min-height: 64px;
+        padding: 0.6rem 0;
+        gap: 1rem;
+      }
+
+      .sticky-bar-info .sticky-label,
+      .sticky-bar-info .sticky-divider,
+      .sticky-bar-info .sticky-desktop {
+        display: none;
+      }
+
+      .sticky-bar-info .sticky-mobile {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 500;
+        line-height: 1.3;
+      }
+
+      .sticky-bar-info .sticky-mobile strong {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .sticky-bar-cta {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.88rem;
+      }
+    }
+
+    /* ===== RESPONSIVE: MOBILE SMALL (480px) ===== */
+    @media (max-width: 480px) {
+
+      /* Layout base */
+      .hero {
+        padding: 3rem 1rem 2.5rem;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      /* Hero */
+      .hero-mascot {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 0.6rem;
+      }
+
+      .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.45rem 1rem;
+        gap: 0.35rem;
+      }
+
+      .hero h1 {
+        font-size: 1.85rem;
+        letter-spacing: -0.5px;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+        line-height: 1.55;
+        color: var(--white);
+      }
+
+      .btn-primary {
+        padding: 0.75rem 1.4rem;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .btn-sub {
+        font-size: 0.9375rem;
+      }
+
+      /* Section titles */
+      .section-title {
+        font-size: 1.35rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Narrative */
+      .narrative-content p {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+      }
+
+      /* Solution */
+      .solution-card {
+        padding: 1.2rem;
+      }
+
+      /* Metrics */
+      .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+      }
+
+      .metric-card {
+        padding: 1rem 0.8rem;
+      }
+
+      .metric-value {
+        font-size: 1.25rem;
+      }
+
+      .metric-label {
+        font-size: 0.875rem;
+      }
+
+      /* Transform cards */
+      .transform-card {
+        padding: 1.2rem 1rem;
+      }
+
+      .transform-card-list li {
+        font-size: 0.875rem;
+      }
+
+      /* Timeline */
+      .timeline::before {
+        left: 15px;
+      }
+
+      .timeline-dot {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+        box-shadow: 0 0 0 4px var(--brand-light);
+      }
+
+      .timeline-item {
+        gap: 0.8rem;
+      }
+
+      .timeline-content {
+        padding: 0.8rem 1rem;
+      }
+
+      .timeline-content h4 {
+        font-size: 1rem;
+      }
+
+      .timeline-content p {
+        font-size: 0.875rem;
+      }
+
+      /* Offer */
+      .offer-card {
+        padding: 2.2rem 1.2rem 1.2rem;
+      }
+
+      .offer-price .pricing-current {
+        font-size: 3rem;
+      }
+
+      .offer-price .pricing-current .currency {
+        font-size: 1.2rem;
+      }
+
+      .final-cta .btn-primary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Mid CTA */
+      .mid-cta {
+        padding: 2.5rem 1rem;
+      }
+
+      .btn-white {
+        padding: 0.7rem 1.4rem;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* FAQ */
+      .faq-question .arrow {
+        font-size: 0.75rem;
+      }
+
+      /* Testimonials */
+      .testimonials-section {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+
+      .testimonials-section .section-inner {
+        padding: 0;
+      }
+
+      .testimonials-carousel-wrap {
+        max-width: 100%;
+      }
+
+      .testimonial-slide img {
+        border-radius: var(--radius-sm);
+      }
+
+      .carousel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+      }
+
+      .carousel-btn--prev {
+        left: 2px;
+      }
+
+      .carousel-btn--next {
+        right: 2px;
+      }
+
+      /* Social proof */
+      .social-proof {
+        padding: 3rem 1rem;
+      }
+
+      /* Sticky bar */
+      .sticky-bar {
+        padding: 0 1rem;
+      }
+
+      .sticky-bar-inner {
+        min-height: 60px;
+      }
+
+      .sticky-bar-info .sticky-mobile {
+        font-size: 0.85rem;
+      }
+
+      .sticky-bar-cta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* ===== REDUCED MOTION — page-specific addition ===== */
+    @media (prefers-reduced-motion: reduce) {
+      .vsl-container {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '228339236250935');
+    fbq('track', 'PageView');
+  </script>
+
+  <!-- TikTok Pixel Code Start -->
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"], ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }; for (var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]); ttq.instance = function (t) {
+        for (
+          var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)ttq.setAndDefer(e, ttq.methods[n]); return e
+      }, ttq.load = function (e, n) {
+        var r = "https://analytics.tiktok.com/i18n/pixel/events.js", o = n && n.partner; ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {}; n = document.createElement("script")
+          ; n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t; e = document.getElementsByTagName("script")[0]; e.parentNode.insertBefore(n, e)
+      };
+
+      ttq.load('D72IQLBC77U89JBP86Q0');
+      ttq.page();
+    }(window, document, 'ttq');
+  </script>
+  <!-- TikTok Pixel Code End -->
+
+  <!-- VTurb VSL Preloads -->
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://api.vturb.com.br">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <!-- Horizontal player -->
+  <link rel="preload"
+    href="https://scripts.converteai.net/309aabd8-9ab1-4e44-a86b-fa932970f15e/players/69a786135a70781128b6f254/v4/player.js"
+    as="script">
+  <link rel="preload"
+    href="https://cdn.converteai.net/309aabd8-9ab1-4e44-a86b-fa932970f15e/69a785c8798c5419f791b412/main.m3u8"
+    as="fetch">
+  <!-- Vertical player -->
+  <link rel="preload"
+    href="https://scripts.converteai.net/309aabd8-9ab1-4e44-a86b-fa932970f15e/players/69a786637607302842a42f43/v4/player.js"
+    as="script">
+  <link rel="preload"
+    href="https://cdn.converteai.net/309aabd8-9ab1-4e44-a86b-fa932970f15e/69a7861616a19d54ddd7087f/main.m3u8"
+    as="fetch">
+
+  <script src="js/player.js" async=""></script>
+  <script src="js/l.js" async=""></script>
+</head>
+
+<body>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- STICKY OFFER BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar-inner">
+      <div class="sticky-bar-info">
+        <span class="sticky-label">Oferta de lançamento</span>
+        <span class="sticky-divider"></span>
+        <span class="sticky-desktop"><span class="sticky-price-old">R$297</span> <span
+            class="sticky-price-arrow">→</span> <span class="sticky-price-new">R$37,00</span></span>
+        <span class="sticky-mobile"><strong>Oferta de lançamento</strong><br><span class="sticky-price-old">R$297</span>
+          <span class="sticky-price-arrow">→</span> <span class="sticky-price-new">R$37,00</span></span>
+      </div>
+      <a href="javascript:void(0)" class="sticky-bar-cta" data-cta="cta-01">Quero meu time de IAs →</a>
+    </div>
+  </div>
+
+  <!-- ========== 1. HERO ========== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-inner">
+        <!-- OpenClaw Mascot (from openclaw.ai) -->
+        <svg class="hero-mascot" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="avestra-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#90C0E0"></stop>
+              <stop offset="100%" stop-color="#101C7E"></stop>
+            </linearGradient>
+            <linearGradient id="avestra-swoosh-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#90C0E0"></stop>
+              <stop offset="100%" stop-color="#306090"></stop>
+            </linearGradient>
+          </defs>
+          <!-- The 'A' Shape -->
+          <path d="M60 20 L95 100 L75 100 L68 83 L42 83 L35 100 L15 100 Z M55 50 L45 75 L65 75 Z"
+            fill="url(#avestra-gradient)"></path>
+          <!-- The Swoosh -->
+          <path d="M10 40 C40 30 110 50 110 80 C110 95 90 100 70 95 C90 90 100 80 100 70 C100 50 40 45 15 55 Z"
+            fill="url(#avestra-swoosh-gradient)"></path>
+        </svg>
+        <h1>Sua próxima equipe <span class="highlight">não precisa de salário</span>, precisa de um prompt</h1>
+        <div class="hero-sub">
+          <p>Aprenda hoje a montar um time de Agentes de Inteligência Artificial que executa o operacional da sua
+            empresa 24/7/365, com consistência, aprendizado, sem folga, sem férias, sem vínculo trabalhista</p>
+        </div>
+        <div class="hero-cta-group">
+          <a href="javascript:void(0)" class="btn-primary" data-cta="cta-02">Quero montar meu time de IAs → R$37,00</a>
+          <span class="btn-sub">Acesso imediato. Instrução direta sem enrolação. Garantia de 7 dias.</span>
+        </div>
+      </div>
+  </section>
+
+  <section style="background:var(--gray-50);">
+    <div class="section-inner">
+      <span class="section-tag reveal">O Custo Operacional</span>
+      <h2 class="section-title reveal reveal-delay-1">Você está gastando R$5.000/mês para alguém fazer o que uma IA
+        resolve em 4 minutos.</h2>
+      <div class="narrative-content">
+        <p class="reveal reveal-delay-2">Responder e-mails com o mesmo template </p>Preencher planilha </p>Fazer
+        follow-up </p>Organizar documentos </p>Gerar relatórios do que já aconteceu.</p>
+        <p class="reveal reveal-delay-2">Nada disso exige criatividade humana</p>
+        <p class="reveal reveal-delay-3">Talvez o grande gargalo da sua operação hoje é <strong>ter pessoas na equipe
+            que faz trabalho de robô </strong></p>
+        <p class="reveal reveal-delay-4">Enquanto isso, as decisões que realmente importam como estratégia,
+          produto, vendas ficam espremidas entre uma reunião e outra.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:var(--white);">
+    <div class="section-inner">
+      <span class="section-tag reveal">A TRÍADE</span>
+      <h2 class="section-title reveal reveal-delay-1">Crie IAs que pensam e agem como você (ou sua empresa).</h2>
+      <div class="narrative-content">
+        <p class="reveal reveal-delay-2"><strong>Segundo Cérebro:</strong> Centralize todo o seu conhecimento. A IA terá
+          acesso instantâneo aos seus métodos, processos e ideias. Esqueça o ChatGPT genérico: aqui, sua IA é treinada
+          com a personalidade da sua marca e os dados técnicos exclusivos do seu produto.</p>
+        <p class="reveal reveal-delay-2"><strong>Caveman:</strong> Engenharia focada em "mexer o ponteiro". A solução
+          foi desenhada para reduzir drasticamente o custo operacional, entregando resultados mensuráveis com velocidade
+          e precisão superiores à execução humana.</p>
+        <p class="reveal reveal-delay-3"><strong>Delegação Real:</strong> Quando a IA domina o processo, você para de
+          dar ordens e passa a validar entregas. Ela executa, reporta o que foi feito e utiliza cada tarefa concluída
+          como aprendizado para otimizar a próxima execução.</p>
+        <p class="reveal reveal-delay-4" style="color:var(--accent); font-weight:700;">Você está a um passo de
+          transformar sua empresa em uma máquina de execução.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--white);">
+    <div class="section-inner">
+      <span class="section-tag reveal">Credibilidade</span>
+      <h2 class="section-title reveal reveal-delay-1">Quem está por trás da implementação.</h2>
+      <div class="story-author reveal reveal-delay-2">
+        <img class="story-avatar" src="public/jonas-guvito.png" alt="Jonas Guvito">
+        <div class="story-author-info">
+          <h3>Jonas Guvito</h3>
+          <p>Fundador da Avestra</p>
+        </div>
+      </div>
+      <div class="story-block reveal">
+        <p>Com 11 anos de mercado digital e domínio do n8n desde 2019, deixei de ser o
+          "faz-tudo" para criar empresas 100% automatizadas.</p>
+        <p>Após otimizar 80% da minha operação e auxiliar grandes marcas, vou te ensinar a delegar processos para times
+          de agentes com cargos e cultura, garantindo o lucro da sua empresa nos próximos anos.</p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card reveal reveal-delay-1">
+          <div class="metric-value">13 dias</div>
+          <div class="metric-label">Tempo médio de implementação</div>
+        </div>
+        <div class="metric-card reveal reveal-delay-2">
+          <div class="metric-value">80%</div>
+          <div class="metric-label">Redução do operacional repetitivo</div>
+        </div>
+        <div class="metric-card reveal reveal-delay-3">
+          <div class="metric-value">24/7</div>
+          <div class="metric-label">Agentes funcionando sem pausa</div>
+        </div>
+        <div class="metric-card reveal reveal-delay-4">
+          <div class="metric-value">R$37,00</div>
+          <div class="metric-label">Investimento para começar</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:var(--white);">
+    <div class="section-inner">
+      <span class="section-tag reveal">Comparativo</span>
+      <h2 class="section-title reveal reveal-delay-1">O impacto de um bom agente.</h2>
+
+      <div class="transform-cards reveal reveal-delay-2">
+        <div class="transform-card transform-card--before">
+          <div class="transform-card-header">Operação Convencional</div>
+          <ul class="transform-card-list">
+            <li>Dependência de humanos para tarefas repetitivas</li>
+            <li>Dificuldade em seguir processos estabelecidos</li>
+            <li>Oscilação de produtividade (dia bom vs. dia ruim)</li>
+            <li>Operação lenta que para aos finais de semana</li>
+            <li>Conhecimento da empresa disperso e frágil</li>
+          </ul>
+        </div>
+        <div class="transform-card transform-card--after"
+          style="background: rgba(144,192,224,0.05); border-color: rgba(144,192,224,0.2);">
+          <div class="transform-card-header" style="color: var(--accent); border-bottom-color: rgba(144,192,224,0.2);">
+            Time de Agentes IA</div>
+          <ul class="transform-card-list">
+            <li>Automação de 80% do fluxo tático e operacional</li>
+            <li>Processos seguidos 100% à risca, sem desvios</li>
+            <li>Produtividade máxima constante (sem "dia ruim")</li>
+            <li>Autogestão: relata o que fez e melhora a cada execução</li>
+            <li>Segundo Cérebro: inteligência centralizada na empresa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section style="background:var(--gray-50);">
+    <div class="section-inner">
+      <span class="section-tag reveal">Harness & Brain</span>
+      <h2 class="section-title reveal reveal-delay-1">O que faz esse time ser diferente de "usar IA".</h2>
+
+      <div class="narrative-content">
+        <div class="split-content reveal reveal-delay-2">
+          <div class="split-block">
+            <h3>HARNESS (A Coleira Inteligente)</h3>
+            <p>Qualquer um abre o ChatGPT e pede pra escrever um e-mail. O resultado? Genérico.</p> Sem o tom da
+            empresa.
+            Sem contexto.</p>
+            <p>O Harness resolve isso. Ele é a camada de controle que garante que cada agente opere DENTRO dos padrões
+              da sua empresa.</p>
+            <ul class="solution-list">
+              <li>Tom de voz e linguagem da marca</li>
+              <li>Regras de negócio inegociáveis</li>
+              <li>Limites de atuação definidos</li>
+              <li>Checklist de qualidade automática</li>
+            </ul>
+          </div>
+          <div class="split-block">
+            <h3>SEGUNDO CÉREBRO (Memória Digital)</h3>
+            <p>Toda empresa tem conhecimento espalhado. O Segundo Cérebro centraliza tudo em um lugar que a IA acessa
+              instantaneamente.</p>
+            <p>Mas o diferencial não é só armazenar — é retroalimentar.</p>
+            <ul class="solution-list">
+              <li>Memória que evolui com cada tarefa</li>
+              <li>Centralização de métodos e ideias</li>
+              <li>Aprendizado contínuo sem ensinar de novo</li>
+              <li>Conhecimento que fica na empresa, não em pessoas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--white);">
+    <div class="section-inner">
+      <span class="section-tag reveal">Oportunidade</span>
+      <h2 class="section-title reveal reveal-delay-1">A janela está aberta. Mas não por muito tempo.</h2>
+      <div class="narrative-content">
+        <p class="reveal reveal-delay-2">Hoje, pouquíssimas empresas estão usando IA como time operacional. A maioria
+          ainda trata como brinquedo.</p>
+        <p class="reveal reveal-delay-3">Quem montar um time de agentes agora vai operar com uma eficiência que o
+          concorrente vai levar anos pra alcançar.</p>
+      </div>
+
+      <!-- Mini Calculadora ROI -->
+      <div class="roi-calculator reveal reveal-delay-4"
+        style="background:var(--gray-50); padding:2.5rem; border-radius:24px; margin-top:3rem; border:1px solid var(--gray-200);">
+        <h4 style="margin-bottom:1.5rem; text-align:center;">Calculadora de Inação</h4>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:2rem;">
+          <div class="input-group">
+            <label
+              style="display:block; font-size:12px; font-weight:700; color:var(--gray-600); margin-bottom:8px; text-transform:uppercase;">Horas
+              repetitivas / semana</label>
+            <input type="number" id="calc-hours" value="10"
+              style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--gray-300); background:white;">
+          </div>
+          <div class="input-group">
+            <label
+              style="display:block; font-size:12px; font-weight:700; color:var(--gray-600); margin-bottom:8px; text-transform:uppercase;">Custo
+              médio / hora (R$)</label>
+            <input type="number" id="calc-cost" value="50"
+              style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--gray-300); background:white;">
+          </div>
+          <div class="result-group"
+            style="background:var(--accent); color:white; padding:1.5rem; border-radius:16px; text-align:center;">
+            <div style="font-size:11px; text-transform:uppercase; font-weight:700; opacity:0.8;">Custo da Inação / Mês
+            </div>
+            <div id="calc-result" style="font-size:24px; font-weight:800;">R$ 2.000</div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--gray-500); text-align:center; margin-top:1.5rem;">Você está queimando este
+          valor por mês em trabalho que um Time de Agentes resolve.</p>
+      </div>
+      <script>
+        const calcHours = document.getElementById('calc-hours');
+        const calcCost = document.getElementById('calc-cost');
+        const calcResult = document.getElementById('calc-result');
+        function updateCalc() {
+          const h = parseFloat(calcHours.value) || 0;
+          const c = parseFloat(calcCost.value) || 0;
+          const res = h * c * 4;
+          calcResult.innerText = 'R$ ' + res.toLocaleString('pt-BR');
+        }
+        calcHours.addEventListener('input', updateCalc);
+        calcCost.addEventListener('input', updateCalc);
+      </script>
+    </div>
+  </section>
+
+
+
+  <!-- ========== 9. MID CTA ========== -->
+  <section class="mid-cta">
+    <h2>Seu time de IAs está a algumas horas de distância.</h2>
+    <p>Pare de executar. Comece a pensar. Deixa a IA cuidar do resto.</p>
+    <a href="javascript:void(0)" class="btn-white" data-cta="cta-04">Quero meu time de IAs →</a>
+  </section>
+
+  <!-- ========== 10. CURRICULO ========== -->
+  <section style="background:var(--gray-50);">
+    <div class="section-inner">
+      <span class="section-tag reveal">Mecanismo</span>
+      <h2 class="section-title reveal reveal-delay-1">Como um Time de Agentes IA funciona na prática.</h2>
+      <p class="section-subtitle reveal">Não é ChatGPT aberto no navegador. É um sistema que pensa, distribui, executa e
+        aprende.</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <h4>A tarefa chega</h4>
+            <p>Por e-mail, sistema, formulário ou manualmente — qualquer demanda operacional entra no fluxo.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <h4>O Gerente IA analisa e delega</h4>
+            <p>Um agente central avalia a tarefa e designa para o agente especialista mais adequado. Atendimento vai pro
+              agente de atendimento. Relatório vai pro agente de dados.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <span class="module-badge">DIFERENCIAL: HARNESS</span>
+            <h4>O agente executa com Harness</h4>
+            <p>O Harness é o manual de cultura da empresa para a IA. Tom de voz, regras de negócio e limites. Resultado:
+              consistência de sênior, velocidade de máquina.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <h4>Relatório + Segundo Cérebro</h4>
+            <p>A IA documenta o que foi feito e injeta o aprendizado no Segundo Cérebro. O time fica mais inteligente a
+              cada execução.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="curriculum-duration reveal">O único "funcionário" que melhora sozinho toda semana sem pedir aumento.</p>
+    </div>
+  </section>
+
+  <section style="background:var(--white);">
+    <div class="section-inner">
+      <span class="section-tag reveal">Conteúdo</span>
+      <h2 class="section-title reveal reveal-delay-1">O que você recebe no treinamento.</h2>
+
+      <div class="solution-grid">
+        <div class="solution-card reveal reveal-delay-2">
+          <div class="module-num">01</div>
+          <h3>Time de Agentes</h3>
+          <p>Como criar agentes especializados para cada função, configurar o Gerente IA e usar templates de prompts
+            operacionais prontos.</p>
+        </div>
+        <div class="solution-card reveal reveal-delay-2">
+          <div class="module-num">02</div>
+          <h3>Segundo Cérebro</h3>
+          <p>Centralização do conhecimento da empresa, estrutura de memória digital e o loop de retroalimentação
+            automática.</p>
+        </div>
+        <div class="solution-card reveal reveal-delay-2">
+          <div class="module-num">03</div>
+          <h3>IA Treinada</h3>
+          <p>Treinamento com personalidade da marca, docs e dados técnicos. Saia do genérico para o especialista no seu
+            mercado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== 11. FAQ ========== -->
+  <section class="faq-section">
+    <div class="section-inner">
+      <span class="section-tag reveal">FAQ</span>
+      <h2 class="section-title reveal reveal-delay-1">Dúvidas Frequentes</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question"><span>Preciso saber programar?</span><span class="arrow">▼</span></div>
+          <div class="faq-answer">Não. O treinamento foi feito para empresários e gestores. Se você sabe usar computador
+            e seguir um passo a passo, consegue implementar.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Funciona para qualquer tipo de empresa?</span><span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">Se sua empresa tem processos repetitivos que consomem tempo humano — atendimento,
+            relatórios, organização, follow-up — funciona.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>É diferente de só usar o ChatGPT?</span><span class="arrow">▼</span></div>
+          <div class="faq-answer">Totalmente. O ChatGPT é uma ferramenta isolada. O que ensinamos é como montar um TIME
+            com agentes especializados e regras de negócio (Harness).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Quanto tempo leva para implementar?</span><span class="arrow">▼</span></div>
+          <div class="faq-answer">O treinamento tem 3 horas. A implementação básica do primeiro time de agentes leva de
+            1 a 2 semanas.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>E se não funcionar pra mim?</span><span class="arrow">▼</span></div>
+          <div class="faq-answer">Garantia de 7 dias. Se não fizer sentido pro seu negócio, devolvemos o valor integral
+            sem perguntas.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Consigo acessar de qualquer lugar?</span><span class="arrow">▼</span></div>
+          <div class="faq-answer">Sim. O portal funciona em computador, tablet e celular. O acesso é vitalício.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 12. CTA FINAL ========== -->
+  <section class="final-cta" style="padding:8rem 2rem; text-align:center;">
+    <h2 class="section-title reveal">Pare de fazer o que uma IA faz melhor que você.</h2>
+    <p class="sub reveal" style="margin-bottom:3rem;">Seu tempo vale mais do que operação repetitiva. Monta o time.
+      Delega. Foca no que move o ponteiro.</p>
+    <a href="https://lastlink.com/p/C07FE2AF4/checkout-payment/" target="_blank" rel="noopener"
+      class="btn-primary reveal" data-cta="cta-final-bottom">Quero meu time de IAs por R$37,00 →</a>
+  </section>
+
+  <!-- ========== 14. FOOTER ========== -->
+  <footer class="footer">
+    <div class="section-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="favicon.svg" alt="Avestra" height="32" style="margin-bottom:1.5rem;">
+          <p>© 2026 · AVESTRA | Jonas Guvito</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+          <a href="https://www.instagram.com/jonasguvito/" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/jonas-augusto-vieira-9117b3203/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script>
+    (function () {
+      'use strict';
+
+      // ===== SCROLL PROGRESS BAR =====
+      var progressBar = document.getElementById('scrollProgress');
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            var scrollTop = window.scrollY;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            var scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      // ===== STICKY OFFER BAR =====
+      var stickyBar = document.getElementById('stickyBar');
+      var heroSection = document.querySelector('.hero');
+      if (stickyBar && heroSection) {
+        var stickyObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              stickyBar.classList.add('visible');
+            } else {
+              stickyBar.classList.remove('visible');
+            }
+          });
+        }, { threshold: 0 });
+        stickyObserver.observe(heroSection);
+
+      }
+
+      // ===== INTERSECTION OBSERVER FOR REVEALS =====
+      var revealElements = document.querySelectorAll('.reveal');
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+
+      // ===== TIMELINE ANIMATION =====
+      var timeline = document.getElementById('curriculum-timeline');
+      if (timeline) {
+        var timelineLineObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              timeline.classList.add('timeline-active');
+              timelineLineObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05 });
+        timelineLineObserver.observe(timeline);
+
+        var timelineItems = timeline.querySelectorAll('.timeline-item');
+        var itemObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            } else {
+              entry.target.classList.remove('active');
+            }
+          });
+        }, { threshold: 0.4, rootMargin: '0px 0px -80px 0px' });
+
+        timelineItems.forEach(function (item) {
+          itemObserver.observe(item);
+        });
+      }
+
+      // ===== FAQ ACCORDION =====
+      document.querySelectorAll('.faq-question').forEach(function (q) {
+        q.addEventListener('click', function () {
+          var item = this.parentElement;
+          document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+            if (openItem !== item) openItem.classList.remove('open');
+          });
+          item.classList.toggle('open');
+        });
+      });
+
+      // ===== FAQ ITEMS REVEAL =====
+      document.querySelectorAll('.faq-item').forEach(function (item, i) {
+        item.classList.add('reveal');
+        item.style.transitionDelay = (i * 0.08) + 's';
+        revealObserver.observe(item);
+      });
+
+
+      // ===== SMOOTH SCROLL FOR CTAs =====
+      document.querySelectorAll('a[data-cta]').forEach(function (link) {
+        if (link.getAttribute('data-cta') === 'cta-03') return;
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          var target = document.querySelector('#cta-final');
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+    })();
+  </script>
+
+  <!-- ===== CRISP CHAT WIDGET ===== -->
+  <script type="text/javascript">
+    window.$crisp = []; window.CRISP_WEBSITE_ID = "b746d326-e397-4953-9827-b3d94f9b5a72";
+    (function () { var d = document; var s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();
+    // Auto-filter helpdesk to OpenClaw category
+    window.$crisp.push(["set", "session:segments", [["openclaw-minicurso"]]]);
+  </script>
+
+  <!-- ===== TRACKING ===== -->
+  <script>
+    (function () {
+      var TRACK_URL = 'https://dsmcxzkynwacmnctbnkk.supabase.co/functions/v1/openclaw-track';
+      var SHORTLINK_URL = 'https://dsmcxzkynwacmnctbnkk.supabase.co/functions/v1/openclaw-shortlink';
+      var PAGE_NAME = 'openclaw';
+
+      // UTMs — read from URL params or sessionStorage immediately (never blocks)
+      var params = new URLSearchParams(window.location.search);
+      var utmSource = params.get('utm_source') || sessionStorage.getItem('oc_utm_source') || null;
+      var utmMedium = params.get('utm_medium') || sessionStorage.getItem('oc_utm_medium') || null;
+      var utmCampaign = params.get('utm_campaign') || sessionStorage.getItem('oc_utm_campaign') || null;
+      var utmContent = params.get('utm_content') || sessionStorage.getItem('oc_utm_content') || null;
+      var utmTerm = params.get('utm_term') || sessionStorage.getItem('oc_utm_term') || null;
+
+      // If ?r= shortlink hash is present, resolve UTMs in background (non-blocking)
+      var hashParam = params.get('r');
+      if (hashParam) {
+        fetch(SHORTLINK_URL + '?hash=' + encodeURIComponent(hashParam))
+          .then(function (res) { return res.ok ? res.json() : {}; })
+          .then(function (resolved) {
+            // Override UTMs with resolved values
+            if (resolved.utm_source) { utmSource = resolved.utm_source; sessionStorage.setItem('oc_utm_source', utmSource); }
+            if (resolved.utm_medium) { utmMedium = resolved.utm_medium; sessionStorage.setItem('oc_utm_medium', utmMedium); }
+            if (resolved.utm_campaign) { utmCampaign = resolved.utm_campaign; sessionStorage.setItem('oc_utm_campaign', utmCampaign); }
+            if (resolved.utm_content) { utmContent = resolved.utm_content; sessionStorage.setItem('oc_utm_content', utmContent); }
+            if (resolved.utm_term) { utmTerm = resolved.utm_term; sessionStorage.setItem('oc_utm_term', utmTerm); }
+            // Re-send page-opened with correct UTMs
+            sendEvent('page-opened', { name: PAGE_NAME, shortlink_resolved: true });
+          })
+          .catch(function () { });
+      }
+
+      // Persist UTMs to sessionStorage for cross-page continuity
+      if (utmSource) sessionStorage.setItem('oc_utm_source', utmSource);
+      if (utmMedium) sessionStorage.setItem('oc_utm_medium', utmMedium);
+      if (utmCampaign) sessionStorage.setItem('oc_utm_campaign', utmCampaign);
+      if (utmContent) sessionStorage.setItem('oc_utm_content', utmContent);
+      if (utmTerm) sessionStorage.setItem('oc_utm_term', utmTerm);
+
+      // Session ID (persists within tab session)
+      var sessionId = sessionStorage.getItem('oc_session_id');
+      if (!sessionId) {
+        sessionId = crypto.randomUUID ? crypto.randomUUID() : (Date.now().toString(36) + Math.random().toString(36).slice(2));
+        sessionStorage.setItem('oc_session_id', sessionId);
+      }
+
+      // Device type
+      var deviceType = window.innerWidth < 768 ? 'mobile' : 'desktop';
+
+      // Referrer
+      var referrer = document.referrer || null;
+
+      // Send event (fire-and-forget)
+      function sendEvent(type, properties) {
+        var payload = {
+          interaction_type: type,
+          properties: properties || {},
+          utm_source: utmSource,
+          utm_medium: utmMedium,
+          utm_campaign: utmCampaign,
+          utm_content: utmContent,
+          utm_term: utmTerm,
+          referrer: referrer,
+          device_type: deviceType,
+          session_id: sessionId
+        };
+        fetch(TRACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(function () { });
+      }
+
+      // Page opened
+      sendEvent('page-opened', { name: PAGE_NAME });
+
+      // CTA clicks (delegated)
+      document.addEventListener('click', function (e) {
+        var ctaEl = e.target.closest('[data-cta]');
+        if (!ctaEl) return;
+        var ctaId = ctaEl.getAttribute('data-cta');
+        sendEvent('cta-offer-pressed', { cta: ctaId, page: PAGE_NAME });
+
+        // cta-03 is the main offer button → also fire checkout-opened
+        if (ctaId === 'cta-03') {
+          sendEvent('checkout-opened', { page: PAGE_NAME });
+
+          // Append UTMs to checkout URL
+          var checkoutUrl = new URL(ctaEl.href);
+          if (utmSource) checkoutUrl.searchParams.set('utm_source', utmSource);
+          if (utmMedium) checkoutUrl.searchParams.set('utm_medium', utmMedium);
+          if (utmCampaign) checkoutUrl.searchParams.set('utm_campaign', utmCampaign);
+          if (utmContent) checkoutUrl.searchParams.set('utm_content', utmContent);
+          if (utmTerm) checkoutUrl.searchParams.set('utm_term', utmTerm);
+          ctaEl.href = checkoutUrl.toString();
+        }
+      });
+    })();
+  </script>
+
+
+
+
+
+</body>
+
+</html>
